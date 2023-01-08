@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutDescription="@xml/activity_main_scene"
-    app:motionDebug="SHOW_ALL"
     app:showPaths="true"
     tools:context=".MainActivity">
 
@@ -31,16 +30,16 @@
         tools:layout_editor_absoluteX="29dp"
         tools:layout_editor_absoluteY="81dp" />
 
-    <TextView
-        android:id="@+id/testTimer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:textColor="@color/white"
-        android:textSize="36sp"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieLoading"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        tools:text="0" />
+        app:layout_constraintVertical_bias="0.393"
+        app:lottie_rawRes="@raw/loading_success_anim" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

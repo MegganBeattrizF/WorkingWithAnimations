@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="text_start">processando pagamento</string>
-    <string name="text_end">pagamento recebido</string>
+    <string name="text_start">processando receita</string>
+    <string name="text_end">informacões recebidas</string>
 </resources>

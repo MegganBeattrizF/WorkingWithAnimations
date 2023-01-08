@@ -1,15 +1,14 @@
 package com.example.myapplication
 
-import androidx.appcompat.app.AppCompatActivity
+import android.animation.ValueAnimator
+import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.os.Handler
-import android.os.Looper
-import android.os.SystemClock
-import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.airbnb.lottie.LottieProperty
+import com.airbnb.lottie.model.KeyPath
 import com.example.myapplication.databinding.ActivityMainBinding
-import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,29 +20,44 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        startAnimation()
+        startMotionAnimation()
+        startLoadingLottieAnimation()
         object : CountDownTimer(5000, 1000) {
-            override fun onTick(secondsUnitlFinish: Long) {
-                binding.testTimer.text = secondsUnitlFinish.timeMillisToSeconds().toString()
-            }
+            override fun onTick(secondsUnitlFinish: Long) {}
             override fun onFinish() {
-                endAnimation()
+                endMotionAnimation()
+                endLoadingLottieAnimation()
             }
         }.start()
     }
 
-    private fun Long.timeMillisToSeconds(): Int {
-        return TimeUnit.MILLISECONDS.toSeconds(this).toInt()
-    }
-
-    private fun startAnimation() {
+    private fun startMotionAnimation() {
         with(binding.motion) {
             getTransition(R.id.loading).duration = 1000
             transitionToState(R.id.endLoading)
         }
     }
 
-    private fun endAnimation() {
+    private fun startLoadingLottieAnimation() {
+        with(binding.lottieLoading) {
+            setMaxFrame(120)
+            repeatCount = ValueAnimator.INFINITE
+            playAnimation()
+            addValueCallback(
+                KeyPath("icn-success"), LottieProperty.COLOR
+            ) { if (it.startFrame <= 238) Color.MAGENTA else Color.YELLOW }
+        }
+    }
+
+    private fun endLoadingLottieAnimation() {
+        with(binding.lottieLoading) {
+            setMinAndMaxFrame(239, 418)
+            repeatCount = 0
+            playAnimation()
+        }
+    }
+
+    private fun endMotionAnimation() {
         with(binding.motion) {
             if (currentState == R.id.endLoading) {
                 binding.title.text = getString(R.string.text_end)
