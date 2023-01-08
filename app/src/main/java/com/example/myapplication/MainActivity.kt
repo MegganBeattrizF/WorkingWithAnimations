@@ -1,11 +1,14 @@
 package com.example.myapplication
 
+import android.animation.Animator
 import android.animation.ValueAnimator
 import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.airbnb.lottie.LottieProperty
 import com.airbnb.lottie.model.KeyPath
 import com.example.myapplication.databinding.ActivityMainBinding
@@ -22,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         startMotionAnimation()
         startLoadingLottieAnimation()
-        object : CountDownTimer(5000, 1000) {
+        object : CountDownTimer(4000, 1000) {
             override fun onTick(secondsUnitlFinish: Long) {}
             override fun onFinish() {
                 endMotionAnimation()
@@ -40,20 +43,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun startLoadingLottieAnimation() {
         with(binding.lottieLoading) {
-            setMaxFrame(120)
+            changeLayersColor(R.color.white)
             repeatCount = ValueAnimator.INFINITE
             playAnimation()
-            addValueCallback(
-                KeyPath("icn-success"), LottieProperty.COLOR
-            ) { if (it.startFrame <= 238) Color.MAGENTA else Color.YELLOW }
         }
     }
 
     private fun endLoadingLottieAnimation() {
         with(binding.lottieLoading) {
-            setMinAndMaxFrame(239, 418)
-            repeatCount = 0
+            setMinAndMaxFrame(238, 418)
             playAnimation()
+            addAnimatorUpdateListener { if (frame == 418) pauseAnimation() }
         }
     }
 
