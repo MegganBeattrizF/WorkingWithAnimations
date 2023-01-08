@@ -1,15 +1,10 @@
 package com.example.myapplication
 
-import androidx.appcompat.app.AppCompatActivity
+import android.animation.ValueAnimator
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.os.Handler
-import android.os.Looper
-import android.os.SystemClock
-import android.view.View
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityMainBinding
-import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,29 +16,45 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        startAnimation()
-        object : CountDownTimer(5000, 1000) {
-            override fun onTick(secondsUnitlFinish: Long) {
-                binding.testTimer.text = secondsUnitlFinish.timeMillisToSeconds().toString()
-            }
+        startMotionAnimation()
+        startLoadingLottieAnimation()
+        simulateBackendProcess()
+    }
+
+    private fun simulateBackendProcess() {
+        object : CountDownTimer(4000, 1000) {
+            override fun onTick(secondsUnitlFinish: Long) {}
             override fun onFinish() {
-                endAnimation()
+                endMotionAnimation()
+                endLoadingLottieAnimation()
             }
         }.start()
     }
 
-    private fun Long.timeMillisToSeconds(): Int {
-        return TimeUnit.MILLISECONDS.toSeconds(this).toInt()
-    }
-
-    private fun startAnimation() {
+    private fun startMotionAnimation() {
         with(binding.motion) {
             getTransition(R.id.loading).duration = 1000
             transitionToState(R.id.endLoading)
         }
     }
 
-    private fun endAnimation() {
+    private fun startLoadingLottieAnimation() {
+        with(binding.lottieLoading) {
+            changeLayersColor(R.color.white)
+            repeatCount = ValueAnimator.INFINITE
+            playAnimation()
+        }
+    }
+
+    private fun endLoadingLottieAnimation() {
+        with(binding.lottieLoading) {
+            setMinAndMaxFrame(238, 418)
+            playAnimation()
+            addAnimatorUpdateListener { if (frame == 418) pauseAnimation() }
+        }
+    }
+
+    private fun endMotionAnimation() {
         with(binding.motion) {
             if (currentState == R.id.endLoading) {
                 binding.title.text = getString(R.string.text_end)
@@ -52,6 +63,5 @@ class MainActivity : AppCompatActivity() {
             getTransition(R.id.finish).duration = 1000
             transitionToState(R.id.end)
         }
-        Toast.makeText(this@MainActivity, "Fim da animacao", Toast.LENGTH_LONG).show()
     }
 }
