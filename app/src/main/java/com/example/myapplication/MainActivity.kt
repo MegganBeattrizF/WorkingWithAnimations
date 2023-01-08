@@ -3,7 +3,6 @@ package com.example.myapplication
 import android.animation.ValueAnimator
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityMainBinding
 
@@ -19,6 +18,10 @@ class MainActivity : AppCompatActivity() {
 
         startMotionAnimation()
         startLoadingLottieAnimation()
+        simulateBackendProcess()
+    }
+
+    private fun simulateBackendProcess() {
         object : CountDownTimer(4000, 1000) {
             override fun onTick(secondsUnitlFinish: Long) {}
             override fun onFinish() {
@@ -60,6 +63,5 @@ class MainActivity : AppCompatActivity() {
             getTransition(R.id.finish).duration = 1000
             transitionToState(R.id.end)
         }
-        Toast.makeText(this@MainActivity, "Fim da animacao", Toast.LENGTH_LONG).show()
     }
 }
