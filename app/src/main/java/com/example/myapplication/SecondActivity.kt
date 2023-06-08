@@ -15,7 +15,11 @@ class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding.contractView.setupView(
+        showViews()
+    }
+
+    private fun showViews() = binding.apply {
+        contractView.setupView(
             CardBaseData(
                 title = "Comentários",
                 rightIcon = R.drawable.ic_baseline_keyboard_arrow_right_24,
@@ -23,14 +27,11 @@ class SecondActivity : AppCompatActivity() {
                 description = "Descreva sua ideia",
             )
         )
-        binding.apply {
-            switchCardState.setOnCheckedChangeListener { _, isEnabled ->
-                contractView.apply {
-                    if (isEnabled) setupNewStatus(CardBaseState.Disabled)
-                    else setupNewStatus(CardBaseState.Enabled)
-                }
+        switchCardState.setOnCheckedChangeListener { _, isEnabled ->
+            contractView.apply {
+                if (isEnabled) setupNewStatus(CardBaseState.Disabled)
+                else setupNewStatus(CardBaseState.Enabled)
             }
         }
-
     }
 }
