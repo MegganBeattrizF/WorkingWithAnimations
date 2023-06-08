@@ -1,4 +1,4 @@
-package com.example.myapplication.customview.data
+package com.example.myapplication.customview.cardbase.data
 
 data class CardBaseData(
     var title: String,

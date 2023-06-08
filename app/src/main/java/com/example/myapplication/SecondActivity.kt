@@ -2,8 +2,8 @@ package com.example.myapplication
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication.customview.CardBaseState
-import com.example.myapplication.customview.data.CardBaseData
+import com.example.myapplication.customview.cardbase.CardBaseState
+import com.example.myapplication.customview.cardbase.data.CardBaseData
 import com.example.myapplication.databinding.SecondActivityBinding
 
 class SecondActivity : AppCompatActivity() {
