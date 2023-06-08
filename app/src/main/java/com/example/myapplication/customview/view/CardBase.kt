@@ -1,12 +1,14 @@
-package com.example.myapplication.customview
+package com.example.myapplication.customview.view
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
 import com.example.myapplication.R
+import com.example.myapplication.customview.CardBaseState
 import com.example.myapplication.customview.CardBaseState.Disabled
 import com.example.myapplication.customview.CardBaseState.Enabled
+import com.example.myapplication.customview.data.CardBaseData
 import com.example.myapplication.databinding.CardBaseBinding
 
 internal class CardBase @JvmOverloads constructor(
