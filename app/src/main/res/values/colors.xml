@@ -8,4 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="holo_red_dark">#ffcc0000</color>
+
+    <color name="blue_hard">#131D50</color>
+    <color name="beige_hard">#F8D1BC</color>
+    <color name="green_hard">#1D636A</color>
+    <color name="purple_hard">#7449BF</color>
+    <color name="black_hard">#212531</color>
 </resources>
