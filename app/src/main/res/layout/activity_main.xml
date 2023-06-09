@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     app:layoutDescription="@xml/activity_main_scene"
     app:showPaths="true"
-    tools:context=".MainActivity">
+    tools:context=".ui.view.MainActivity">
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/background"

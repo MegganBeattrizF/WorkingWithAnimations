@@ -1,14 +1,14 @@
-package com.example.myapplication.customview.cardbase.view
+package com.example.myapplication.ui.customview.cardbase.view
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
 import com.example.myapplication.R
-import com.example.myapplication.customview.cardbase.CardBaseState
-import com.example.myapplication.customview.cardbase.CardBaseState.Disabled
-import com.example.myapplication.customview.cardbase.CardBaseState.Enabled
-import com.example.myapplication.customview.cardbase.data.CardBaseData
+import com.example.myapplication.ui.customview.cardbase.CardBaseState
+import com.example.myapplication.ui.customview.cardbase.CardBaseState.Disabled
+import com.example.myapplication.ui.customview.cardbase.CardBaseState.Enabled
+import com.example.myapplication.ui.customview.cardbase.data.CardBaseData
 import com.example.myapplication.databinding.CardBaseBinding
 import com.example.myapplication.utils.ifDefaultInt
 

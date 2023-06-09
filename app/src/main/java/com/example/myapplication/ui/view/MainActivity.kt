@@ -1,9 +1,10 @@
-package com.example.myapplication
+package com.example.myapplication.ui.view
 
 import android.animation.ValueAnimator
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.utils.changeLayersColor
 

@@ -1,6 +1,5 @@
 package com.example.myapplication
 
-import com.example.myapplication.aprendendo.assets.Testano
 import com.example.myapplication.utils.JsonUtil
 import com.google.common.truth.Truth
 import org.junit.Test
@@ -17,7 +16,7 @@ internal class JsonTest {
 
     @Test
     fun getJsonString() {
-        Testano::class.declaredMemberProperties.forEach { property ->
+        User::class.declaredMemberProperties.forEach { property ->
             Truth.assertThat(extractJsonKeysFromMockJson()).contains(property.name)
         }
     }
