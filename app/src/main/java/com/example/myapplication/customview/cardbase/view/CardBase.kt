@@ -10,6 +10,7 @@ import com.example.myapplication.customview.cardbase.CardBaseState.Disabled
 import com.example.myapplication.customview.cardbase.CardBaseState.Enabled
 import com.example.myapplication.customview.cardbase.data.CardBaseData
 import com.example.myapplication.databinding.CardBaseBinding
+import com.example.myapplication.utils.ifDefaultInt
 
 internal class CardBase @JvmOverloads constructor(
     context: Context,
@@ -60,6 +61,3 @@ internal class CardBase @JvmOverloads constructor(
         tvDescription.text = viewData.description
     }
 }
-
-private fun Int.ifDefaultInt(defaultValue: () -> Int): Int =
-    if (this == 0) defaultValue.invoke() else this

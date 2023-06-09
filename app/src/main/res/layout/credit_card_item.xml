@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvCredit"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
@@ -15,7 +16,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/ivIconBrand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
@@ -25,16 +26,16 @@
             app:srcCompat="@drawable/ic_baseline_no_photography_24" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tvCardNumber"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:fontFamily="@font/sometype_mono_medium"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintBottom_toBottomOf="@+id/ivIconBrand"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:layout_constraintStart_toEndOf="@+id/ivIconBrand"
+            app:layout_constraintTop_toTopOf="@+id/ivIconBrand"
             tools:text="**** **** **** 3090" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -44,10 +45,10 @@
             android:background="@color/beige_hard"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView">
+            app:layout_constraintTop_toBottomOf="@+id/ivIconBrand">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tvExpirationDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="16dp"
@@ -60,7 +61,7 @@
                 tools:text="Exp 09/25" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tvUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
