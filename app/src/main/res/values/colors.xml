@@ -13,5 +13,6 @@
     <color name="beige_hard">#F8D1BC</color>
     <color name="green_hard">#1D636A</color>
     <color name="purple_hard">#7449BF</color>
+    <color name="purple_dark">#4C2E80</color>
     <color name="black_hard">#212531</color>
 </resources>

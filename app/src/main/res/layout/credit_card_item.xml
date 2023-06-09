@@ -5,25 +5,26 @@
     android:id="@+id/cvCredit"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginBottom="16dp"
     app:cardCornerRadius="16dp"
-    app:cardElevation="8dp"
-    tools:backgroundTint="@color/blue_hard">
+    app:cardElevation="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerCardHeader"
         android:layout_width="match_parent"
+        android:background="@color/purple_hard"
         android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/ivIconBrand"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
+            android:layout_width="36dp"
+            android:layout_height="24dp"
+            android:layout_marginHorizontal="24dp"
             android:layout_marginVertical="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_no_photography_24" />
+            app:srcCompat="@drawable/ic_visa_logo" />
 
         <TextView
             android:id="@+id/tvCardNumber"
@@ -52,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="16dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="24dp"
                 android:fontFamily="@font/sometype_mono_medium"
                 android:textColor="@color/black_hard"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -64,7 +65,7 @@
                 android:id="@+id/tvUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="24dp"
                 android:fontFamily="@font/sometype_mono_medium"
                 android:textColor="@color/black_hard"
                 app:layout_constraintBottom_toBottomOf="parent"
